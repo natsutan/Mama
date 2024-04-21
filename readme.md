@@ -5,4 +5,6 @@
 
 上手いことfly.io等にデプロイできれば、URLを共有して遠隔で声調練習ができるかもしれません。
 
-<video src="ma.mp4" controls></video>
+[動画](https://github.com/natsutan/Mama/blob/main/ma.mp4)
+
+
