@@ -1,12 +1,14 @@
+import os
+
 import flet as ft
 import random
 
 ma_s = [
-    ft.Image(src=f"image/ma2.png", width=100, height=100, fit=ft.ImageFit.CONTAIN),
-    ft.Image(src=f"image/ma1.png", width=100, height=100, fit=ft.ImageFit.CONTAIN),
-    ft.Image(src=f"image/ma3.png", width=100, height=100, fit=ft.ImageFit.CONTAIN),
-    ft.Image(src=f"image/ma4.png", width=100, height=100, fit=ft.ImageFit.CONTAIN)]
-empty = ft.Image(src=f"image/empty.png", width=100, height=100, fit=ft.ImageFit.CONTAIN)
+    ft.Image(src=f"https://pbs.twimg.com/media/GLse3btbUAA9gzd?format=png&name=360x360", width=100, height=100, fit=ft.ImageFit.CONTAIN),
+    ft.Image(src=f"https://pbs.twimg.com/media/GLse3Wwb0AADfRw?format=png&name=360x360", width=100, height=100, fit=ft.ImageFit.CONTAIN),
+    ft.Image(src=f"https://pbs.twimg.com/media/GLse3YQaMAAO1Fy?format=png&name=360x360", width=100, height=100, fit=ft.ImageFit.CONTAIN),
+    ft.Image(src=f"https://pbs.twimg.com/media/GLse3aAbIAA8rL0?format=png&name=360x360", width=100, height=100, fit=ft.ImageFit.CONTAIN)]
+empty = ft.Image(src=f"https://pbs.twimg.com/media/GLse5spbAAAclYo?format=png&name=360x360", width=100, height=100, fit=ft.ImageFit.CONTAIN)
 
 images = None
 def main(page: ft.Page):
@@ -17,6 +19,7 @@ def main(page: ft.Page):
         global images
         page.controls.remove(images)
         ma = []
+        print("click")
 
         if random.random() < 0.5:
             letter_count = 3
@@ -40,8 +43,10 @@ def main(page: ft.Page):
 
     images = ft.Row([ma_s[0], ma_s[1], ma_s[2], button])
 
+
     page.controls.append(images)
     page.update()
 
 
-ft.app(target=main)
+#ft.app(target=main)
+ft.app(target=main, view=ft.WEB_BROWSER, port=8080)
